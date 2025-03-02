@@ -1,4 +1,4 @@
-version: "3.8"
+wqversion: "3.8"
 
 services:
   web:
@@ -8,13 +8,10 @@ services:
     volumes:
       - .:/var/www/html
     depends_on:
-<<<<<<< Updated upstream
-      - db
-=======
       - db  # Ensure MySQL starts before the web server
 
   db:
-    image: mysql:latest
+    image: mysql:5.7
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -29,18 +26,4 @@ services:
 volumes:
   db_data:
 
->>>>>>> Stashed changes
 
-  db:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: rootpassword
-    volumes:
-      - db_data:/var/lib/mysql
-
-volumes:
-  db_data:
