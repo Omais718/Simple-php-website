@@ -20,7 +20,14 @@ function config($key = '')
         'template_path' => 'template',
         'content_path' => 'content',
         'version' => 'v3.1',
+
+        // Database Configuration
+        'db_host' => 'db', // Docker service name for MySQL
+        'db_name' => 'mydb',
+        'db_user' => 'user',
+        'db_pass' => 'password',
     ];
 
     return isset($config[$key]) ? $config[$key] : null;
 }
+?>
